@@ -32,9 +32,9 @@ const Header = () =>{
         <nav>
           <ul>
             <li>Home</li>
-            <li>Categorias</li>
             <li>Destaques</li>
             <li>Loja</li>
+            <li>Contato</li>
             <li><lord-icon
               src="https://cdn.lordicon.com/wbtzvepm.json"
               trigger="click"

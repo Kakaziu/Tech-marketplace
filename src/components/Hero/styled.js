@@ -25,6 +25,7 @@ export const HeroTag = styled.div`
   p{
     font-size: 18px;
     width: 80%;
+    margin-top: 20px;
   }
 
   .swiper{
