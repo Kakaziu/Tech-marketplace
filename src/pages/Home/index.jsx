@@ -1,6 +1,8 @@
+import Categorys from '../../components/Categorys'
 import DestaquesHome from '../../components/DestaquesHome'
 import Header from '../../components/Header'
 import Hero from '../../components/Hero'
+import StoreHome from '../../components/StoreHome'
 
 const Home = () =>{
   return(
@@ -8,6 +10,8 @@ const Home = () =>{
       <Header/>
       <Hero/>
       <DestaquesHome/>
+      <Categorys/>
+      <StoreHome/>
     </section>
   )
 }

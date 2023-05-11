@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Container, HeaderTag } from './styled'
-import { FaShoppingCart } from 'react-icons/fa'
 
 const Header = () =>{
 
