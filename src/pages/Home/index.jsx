@@ -1,7 +1,9 @@
 import Categorys from '../../components/Categorys'
-import DestaquesHome from '../../components/DestaquesHome'
+import FeaturedHome from '../../components/FeaturedHome'
+import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import Hero from '../../components/Hero'
+import InfoHome from '../../components/InfoHome'
 import StoreHome from '../../components/StoreHome'
 
 const Home = () =>{
@@ -9,9 +11,11 @@ const Home = () =>{
     <section id="home">
       <Header/>
       <Hero/>
-      <DestaquesHome/>
+      <FeaturedHome/>
       <Categorys/>
       <StoreHome/>
+      <InfoHome/>
+      <Footer/>
     </section>
   )
 }

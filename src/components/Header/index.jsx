@@ -17,7 +17,6 @@ const Header = () =>{
     <HeaderTag headerColor={headerColor}>
       <Container>
         <h2>
-          <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
           <lord-icon
             src="https://cdn.lordicon.com/fbyjqbak.json"
             trigger="loop"

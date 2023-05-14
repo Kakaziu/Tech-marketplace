@@ -1,6 +1,6 @@
 import { Container, DestaquesArea, Product, TitleDes,InfoProduct, Products } from './styled'
 
-const DestaquesHome = () =>{
+const FeaturedHome = () =>{
   return(
     <DestaquesArea>
       <Container>
@@ -60,4 +60,4 @@ const DestaquesHome = () =>{
   )
 }
 
-export default DestaquesHome
+export default FeaturedHome
