@@ -4,6 +4,7 @@ export const DestaquesArea = styled.section`
   color: white;
   background-color: #0b0b0b;
   padding: 20px;
+  position: relative;
 `
 
 export const TitleDes = styled.div`
@@ -43,6 +44,10 @@ export const Container = styled.div`
   margin: auto;
   justify-content: space-between;
   margin-top: 40px;
+  transition: 0.5s;
+  position: relative;
+  opacity: ${(props) => props.moveUp ? 1 : 0};
+  top: ${(props) => props.moveUp ? '0px' : '100px'};
 `
 
 export const Products = styled.div`

@@ -6,6 +6,10 @@ export const CategorysTag = styled.section`
   color: white;
   padding: 30px;
   text-align: center;
+  transition: 0.5s;
+  position: relative;
+  opacity: ${(props) => props.moveUp ? 1 : 0};
+  top: ${(props) => props.moveUp ? '0px' : '100px'};
 
 
   hr{
@@ -21,7 +25,7 @@ export const CategorysTag = styled.section`
 
 export const CategorysArea  = styled.div`
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 90%;
   display: flex;
   justify-content: space-around;

@@ -1,6 +1,17 @@
+import { useState } from 'react'
 import { CategorysTag, CategorysArea, Category, Overlay } from './styled'
 
 const Categorys = () => {
+
+  const [moveUp, setMoveUp] = useState(false)
+
+  document.addEventListener('scroll', () =>{
+    if(window.scrollY > 950){
+      setMoveUp(true)
+    }
+
+    console.log(window.scrollY)
+  })
 
   function hoverCategory(e){
     const overlay = e.target
@@ -17,7 +28,7 @@ const Categorys = () => {
   }
 
   return(
-    <CategorysTag>
+    <CategorysTag moveUp={moveUp}>
       <hr></hr>
       <h2>Categorias de produtos</h2>
 

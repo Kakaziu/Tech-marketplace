@@ -1,9 +1,19 @@
+import { useState } from 'react'
 import { Container, DestaquesArea, Product, TitleDes,InfoProduct, Products } from './styled'
 
 const FeaturedHome = () =>{
+
+  const [moveUp, setMoveUp] = useState(false)
+
+  document.addEventListener('scroll', () =>{
+    if(window.scrollY > 150){
+      setMoveUp(true)
+    }
+  })
+
   return(
     <DestaquesArea>
-      <Container>
+      <Container moveUp={moveUp}>
         <TitleDes>
           <h2>Alguns Destaques do mês</h2>
           <p>Confira nos destaques da TechMoos alguma das melhores promoções desse mês</p>
