@@ -1,33 +1,17 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Store = styled.section`
   width: 100%;
   background-color: #0b0b0b;
   padding-top: 50px;
-
-  hr{
-    width: 50px;
-    margin: auto;
-    background-color: #baadfc;
-    height: 8px;
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 10px;
-  }
-
-  h2{
-    text-align: center;
-    color: white;
-    margin-bottom: 30px;
-  }
-`
+`;
 
 export const MoveUp = styled.div`
   transition: 0.5s;
   position: relative;
-  opacity: ${(props) => props.moveUp ? 1 : 0};
-  top: ${(props) => props.moveUp ? '0px' : '100px'};
-`
+  opacity: ${(props) => (props.moveUp ? 1 : 0)};
+  top: ${(props) => (props.moveUp ? "0px" : "100px")};
+`;
 
 export const Products = styled.div`
   width: 90%;
@@ -37,7 +21,61 @@ export const Products = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-`
+`;
+
+export const MenuProducts = styled.div`
+  width: 85%;
+  margin: auto;
+  color: white;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    width: 80%;
+    margin: auto;
+
+    li {
+      transition: 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: #a493fa;
+      }
+    }
+  }
+
+  div {
+    margin: auto;
+    position: relative;
+    width: 90%;
+  }
+`;
+
+export const LineOutside = styled.hr`
+  position: relative;
+  margin: auto;
+  width: 100%;
+  margin-top: 20px;
+  height: 3px;
+  border: none;
+  background-color: white;
+  border-radius: 10px;
+  bottom: 0;
+`;
+
+export const LineInside = styled.hr`
+  position: absolute;
+  z-index: 9997;
+  transition: 0.3s;
+  bottom: 0;
+  left: ${(props) => props.linePlace};
+  height: 3px;
+  width: 17%;
+  border: none;
+  background-color: #836bff;
+`;
 
 export const Product = styled.div`
   display: flex;
@@ -47,12 +85,12 @@ export const Product = styled.div`
   width: 48%;
   margin-top: 50px;
 
-  img{
+  img {
     min-width: 230px;
     height: 180px;
     border-radius: 4px;
   }
-`
+`;
 
 export const InfoProducts = styled.div`
   padding: 15px;
@@ -60,21 +98,21 @@ export const InfoProducts = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  h3{
+  h3 {
     margin-bottom: 10px;
     font-size: 18px;
   }
 
-  p{
+  p {
     font-size: 13px;
 
-    span{
+    span {
       font-size: 14px;
       color: blue;
     }
   }
 
-  span{
+  span {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -83,7 +121,7 @@ export const InfoProducts = styled.div`
     color: #baadfc;
     font-weight: bold;
 
-    button{
+    button {
       padding: 8px 20px;
       font-size: 15px;
       border-radius: 4px;
@@ -92,13 +130,13 @@ export const InfoProducts = styled.div`
       letter-spacing: 1px;
       transition: 0.3s;
       cursor: pointer;
-        
-      &:hover{
+
+      &:hover {
         transform: scale(1.1);
       }
     }
   }
-`
+`;
 
 export const DirectButton = styled.a`
   width: 20%;
@@ -111,8 +149,8 @@ export const DirectButton = styled.a`
   border: none;
   color: #baadfc;
   cursor: pointer;
-  
-  &:hover{
+
+  &:hover {
     color: #a195de;
   }
-`
+`;
