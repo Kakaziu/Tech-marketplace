@@ -8,6 +8,10 @@ export const InfoHomeTag = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.5s;
+  position: relative;
+  opacity: ${(props) => props.moveUp ? 1 : 0};
+  top: ${(props) => props.moveUp ? '0px' : '100px'};
 
   div{
     width: 55%;

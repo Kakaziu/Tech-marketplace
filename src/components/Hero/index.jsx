@@ -5,6 +5,7 @@ import 'swiper/css/pagination'
 import { Pagination, Autoplay } from 'swiper'
 import { useEffect, useState } from 'react'
 
+
 const Hero = () =>{
 
   const [smoothMoveHero, setSmoothMoveHero] = useState(false)

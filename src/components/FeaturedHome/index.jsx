@@ -1,15 +1,29 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Container, DestaquesArea, Product, TitleDes,InfoProduct, Products } from './styled'
+import products from '../../Products'
+import { ProductsContext } from '../../context/ProductContext'
 
 const FeaturedHome = () =>{
 
+  const { addProductsInCar } = useContext(ProductsContext)
   const [moveUp, setMoveUp] = useState(false)
+  const [featuredProducts, setFeaturedProducts] = useState([])
+
+  useEffect(() =>{
+    getFeaturedGames()
+  }, [])
 
   document.addEventListener('scroll', () =>{
-    if(window.scrollY > 150){
+    if(window.scrollY > 250){
       setMoveUp(true)
     }
   })
+
+  function getFeaturedGames(){
+    const featuredProds = products.filter((product) => product.isFeatured)
+
+    setFeaturedProducts(featuredProds)
+  }
 
   return(
     <DestaquesArea>
@@ -22,48 +36,23 @@ const FeaturedHome = () =>{
         </TitleDes>
 
         <Products>
-          <Product>
-            <InfoProduct>
-              <div>
-                <h3>Notebook Acer</h3>
-                <p>Acer Aspire 5 A515-56-72JY. Este laptop apresenta uma tela Full HD de 15,6 polegadas, processador 
-            Intel Core i7-1165G7, 8GB de memória RAM e um SSD de 256GB.</p>
-              </div>
+          {featuredProducts.map((featuredProduct) => {
+            return(
+              <Product key={featuredProduct.id}>
+                <InfoProduct>
+                  <div>
+                    <h3>{featuredProduct.name}</h3>
+                    <p>{featuredProduct.description}</p>
+                  </div>
 
-              <span>R$3.199,00 <button>Adicionar</button></span>
-            </InfoProduct>
-            <div>
-              <img src='./public/assets/images/acer.webp'/>
-            </div>
-          </Product>
-          <Product>
-            <InfoProduct>
-              <div>
-                <h3>Notebook Acer</h3>
-                <p>Acer Aspire 5 A515-56-72JY. Este laptop apresenta uma tela Full HD de 15,6 polegadas, processador 
-            Intel Core i7-1165G7, 8GB de memória RAM e um SSD de 256GB.</p>
-              </div>
-
-              <span>R$3.199,00 <button>Adicionar</button></span>
-            </InfoProduct>
-            <div>
-              <img src='./public/assets/images/acer.webp'/>
-            </div>
-          </Product>
-          <Product>
-            <InfoProduct>
-              <div>
-                <h3>Notebook Acer</h3>
-                <p>Acer Aspire 5 A515-56-72JY. Este laptop apresenta uma tela Full HD de 15,6 polegadas, processador 
-            Intel Core i7-1165G7, 8GB de memória RAM e um SSD de 256GB.</p>
-              </div>
-
-              <span>R$3.199,00 <button>Adicionar</button></span>
-            </InfoProduct>
-            <div>
-              <img src='./public/assets/images/acer.webp'/>
-            </div>
-          </Product>
+                  <span>R${featuredProduct.price},00 <button onClick={() => addProductsInCar(featuredProduct.id)}>Adicionar</button></span>
+                </InfoProduct>
+                <div>
+                  <img src={featuredProduct.urlImg}/>
+                </div>
+              </Product>
+            )
+          })}
         </Products>
       </Container>
     </DestaquesArea>

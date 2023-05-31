@@ -1,8 +1,18 @@
+import { useState } from 'react'
 import { InfoHomeTag } from './styled'
 
 const InfoHome = () =>{
+
+  const [moveUp, setMoveUp] = useState(false)
+
+  document.addEventListener('scroll', () =>{
+    if(window.scrollY > 2900){
+      setMoveUp(true)
+    }
+  })
+
   return(
-    <InfoHomeTag>
+    <InfoHomeTag moveUp={moveUp}>
       <div>
         <h2>Uma das entregas mais rápidas do país</h2>
         <p>Oferecemos um serviço de entrega de alta qualidade, garantindo que nossos clientes recebam seus 

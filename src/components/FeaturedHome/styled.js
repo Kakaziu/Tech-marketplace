@@ -33,7 +33,7 @@ export const TitleDes = styled.div`
     cursor: pointer;
 
     &:hover{
-      background-color: #a195de;
+      background-color: #9484e0;
     }
   }
 `
@@ -69,7 +69,7 @@ export const Product = styled.div`
     justify-content: space-between;
 
     span{
-      color: #a0a0a0;
+      color: #baadfc;
       font-size: 22px;
       width: 95%;
       display: flex;
@@ -95,7 +95,7 @@ export const Product = styled.div`
 
   img{
     width: 200px;
-    height: 100%;
+    height: 200px;
     border-radius: 4px;
   }
 

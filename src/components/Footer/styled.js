@@ -8,25 +8,24 @@ export const FooterTag = styled.footer`
   color: white;
 
   div{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding-top: 30px;
-
-    span{
-      font-size: 25px;
-      color: white;
-      margin-right: 15px;
-      font-weight: bold;
-    }
+    margin: auto;
   }
+`
+
+export const TitleFooter = styled.span`
+    font-size: 25px;
+    color: white;
+    display: flex;
+    width: 13%;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
 `
 
 export const ContainerFooter = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 90%;
   margin: auto;
 
@@ -37,12 +36,29 @@ export const ContainerFooter = styled.div`
     li{
       display: flex;
       align-items: center;
+      margin-top: 10px;
+
+      span{
+        margin-right: 10px;
+        margin-top: 3px;
+      }
     }
   }
 
   div{
     display: flex;
     flex-direction: column;
-    width: 33%;
+    align-items: flex-start;
+    height: 200px;
   }
+`
+
+export const Finally = styled.span`
+  width: 100%;
+  display: block;
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 `

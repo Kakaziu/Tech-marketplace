@@ -22,11 +22,18 @@ export const Store = styled.section`
   }
 `
 
+export const MoveUp = styled.div`
+  transition: 0.5s;
+  position: relative;
+  opacity: ${(props) => props.moveUp ? 1 : 0};
+  top: ${(props) => props.moveUp ? '0px' : '100px'};
+`
+
 export const Products = styled.div`
   width: 90%;
   margin: auto;
   color: white;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -41,7 +48,7 @@ export const Product = styled.div`
   margin-top: 50px;
 
   img{
-    width: 230px;
+    min-width: 230px;
     height: 180px;
     border-radius: 4px;
   }

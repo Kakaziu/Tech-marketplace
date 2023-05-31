@@ -1,8 +1,13 @@
-import { useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Container, HeaderTag } from './styled'
+import Cart from '../Cart'
+import { ProductsContext } from '../../context/ProductContext'
+import { toast } from 'react-toastify'
 
 const Header = () =>{
 
+  const { totalCar } = useContext(ProductsContext)
+  const [showCart, setShowCart] = useState(false)
   const [headerColor, setHeaderColor] = useState(false)
 
   window.addEventListener('scroll', () =>{
@@ -12,6 +17,15 @@ const Header = () =>{
       setHeaderColor(false)
     }
   })
+
+  useEffect(() =>{
+    if(totalCar() === 0) setShowCart(false)
+  }, [totalCar()])
+
+  function onShowCart(){
+    if(totalCar() === 0) return toast.warn('Não tem produtos no carrinho.')
+    setShowCart(!showCart)
+  }
 
   return(
     <HeaderTag headerColor={headerColor}>
@@ -33,15 +47,19 @@ const Header = () =>{
             <li>Destaques</li>
             <li>Loja</li>
             <li>Contato</li>
-            <li><lord-icon
-              src="https://cdn.lordicon.com/wbtzvepm.json"
-              trigger="click"
-              colors="primary:#66d7ee,secondary:#66d7ee"
-              style={{width:'45px', height:'45px', cursor: 'pointer'}}>
-            </lord-icon></li>
+            <li onClick={onShowCart}>
+              { totalCar() > 0 ? <span>{totalCar()}</span> : ''}
+              <lord-icon
+                src="https://cdn.lordicon.com/wbtzvepm.json"
+                trigger="click"
+                colors="primary:#66d7ee,secondary:#66d7ee"
+                style={{width:'45px', height:'45px', cursor: 'pointer'}}>
+              </lord-icon>
+            </li>
           </ul>
         </nav>
       </Container>
+      <Cart showCart={showCart}/>
     </HeaderTag>
   )
 }

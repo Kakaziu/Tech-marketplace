@@ -6,11 +6,9 @@ const Categorys = () => {
   const [moveUp, setMoveUp] = useState(false)
 
   document.addEventListener('scroll', () =>{
-    if(window.scrollY > 950){
+    if(window.scrollY > 1050){
       setMoveUp(true)
     }
-
-    console.log(window.scrollY)
   })
 
   function hoverCategory(e){
