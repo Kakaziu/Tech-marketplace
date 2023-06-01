@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { Container, HeaderTag } from "./styled";
+import { AiOutlineMenu } from "react-icons/ai";
+import { Container, HeaderTag, MobileMenu } from "./styled";
 import Cart from "../Cart";
 import { ProductsContext } from "../../context/ProductContext";
 import { toast } from "react-toastify";
@@ -77,6 +78,9 @@ const Header = () => {
               ></lord-icon>
             </li>
           </ul>
+          <MobileMenu>
+            <AiOutlineMenu size="40" />
+          </MobileMenu>
         </nav>
       </Container>
       <Cart showCart={showCart} />

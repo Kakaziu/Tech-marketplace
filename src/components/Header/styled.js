@@ -28,6 +28,10 @@ export const Container = styled.div`
     span {
       margin-left: 15px;
     }
+
+    @media (max-width: 400px) {
+      font-size: 21px;
+    }
   }
 
   ul {
@@ -62,5 +66,29 @@ export const Container = styled.div`
         font-weight: bold;
       }
     }
+
+    @media (max-width: 880px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 470px) {
+    width: 95%;
+  }
+`;
+
+export const MobileMenu = styled.span`
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  cursor: pointer;
+
+  @media (max-width: 880px) {
+    display: block;
+  }
+
+  @media (max-width: 470px) {
+    right: 30px;
   }
 `;

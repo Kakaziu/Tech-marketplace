@@ -6,26 +6,51 @@ export const HeroTag = styled.div`
   height: 100vh;
   background-color: #0b0a24;
   color: white;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
   img {
-    width: 450px;
+    width: 40%;
     height: 400px;
-    position: relative;
+
+    @media (max-width: 1060px) {
+      height: 300px;
+    }
+
+    @media (max-width: 880px) {
+      width: 70%;
+      height: 400px;
+    }
+
+    @media (max-width: 600px) {
+      width: 90%;
+      height: 400px;
+    }
+
+    @media (max-width: 420px) {
+      width: 95%;
+      height: 300px;
+    }
   }
 
   h1 {
     font-size: 30px;
     color: #baadfc;
+
+    @media (max-width: 880px) {
+      margin-top: 40px;
+    }
   }
 
   p {
     font-size: 18px;
     width: 80%;
     margin-top: 20px;
+
+    @media (max-width: 1060px) {
+      width: 95%;
+    }
   }
 
   .swiper {
@@ -40,6 +65,12 @@ export const HeroTag = styled.div`
   .swiper-slides {
     display: flex;
     align-items: center;
+    height: 80%;
+
+    @media (max-width: 880px) {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
   }
 
   a {
@@ -61,5 +92,26 @@ export const HeroTag = styled.div`
       background-color: black;
       color: #baadfc;
     }
+
+    @media (max-width: 1060px) {
+      width: 60%;
+    }
+
+    @media (max-width: 880px) {
+      margin: auto;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 880px) {
+    height: 150vh;
+  }
+
+  @media (max-width: 600px) {
+    height: 160vh;
+  }
+
+  @media (max-width: 500px) {
+    height: 180vh;
   }
 `;
