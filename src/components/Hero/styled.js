@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const HeroTag = styled.div`
   margin: auto;
@@ -11,38 +11,38 @@ export const HeroTag = styled.div`
   align-items: center;
   justify-content: center;
 
-  img{
+  img {
     width: 450px;
     height: 400px;
     position: relative;
   }
 
-  h1{
+  h1 {
     font-size: 30px;
     color: #baadfc;
   }
 
-  p{
+  p {
     font-size: 18px;
     width: 80%;
     margin-top: 20px;
   }
 
-  .swiper{
+  .swiper {
     width: 80%;
-    opacity: ${(props) => props.smooth ? 1 : 0};
+    opacity: ${(props) => (props.smooth ? 1 : 0)};
     transition: 2s;
     padding: 50px 0px;
     margin-top: 50px;
     border-radius: 10px;
   }
 
-  .swiper-slides{
+  .swiper-slides {
     display: flex;
     align-items: center;
   }
 
-  a{
+  a {
     text-decoration: none;
     color: #0b0a24;
     background-color: #baadfc;
@@ -55,10 +55,11 @@ export const HeroTag = styled.div`
     font-size: 20px;
     border-radius: 4px;
     transition: 0.3s;
+    cursor: pointer;
 
-    &:hover{
+    &:hover {
       background-color: black;
       color: #baadfc;
     }
   }
-`
+`;

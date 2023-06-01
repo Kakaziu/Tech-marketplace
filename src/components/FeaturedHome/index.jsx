@@ -1,43 +1,52 @@
-import { useContext, useEffect, useState } from 'react'
-import { Container, DestaquesArea, Product, TitleDes,InfoProduct, Products } from './styled'
-import products from '../../Products'
-import { ProductsContext } from '../../context/ProductContext'
+import { useContext, useEffect, useState } from "react";
+import {
+  Container,
+  DestaquesArea,
+  Product,
+  TitleDes,
+  InfoProduct,
+  Products,
+} from "./styled";
+import products from "../../Products";
+import { ProductsContext } from "../../context/ProductContext";
 
-const FeaturedHome = () =>{
+const FeaturedHome = () => {
+  const { addProductsInCar } = useContext(ProductsContext);
+  const [moveUp, setMoveUp] = useState(false);
+  const [featuredProducts, setFeaturedProducts] = useState([]);
 
-  const { addProductsInCar } = useContext(ProductsContext)
-  const [moveUp, setMoveUp] = useState(false)
-  const [featuredProducts, setFeaturedProducts] = useState([])
+  useEffect(() => {
+    getFeaturedGames();
+  }, []);
 
-  useEffect(() =>{
-    getFeaturedGames()
-  }, [])
-
-  document.addEventListener('scroll', () =>{
-    if(window.scrollY > 250){
-      setMoveUp(true)
+  document.addEventListener("scroll", () => {
+    if (window.scrollY > 250) {
+      setMoveUp(true);
     }
-  })
+  });
 
-  function getFeaturedGames(){
-    const featuredProds = products.filter((product) => product.isFeatured)
+  function getFeaturedGames() {
+    const featuredProds = products.filter((product) => product.isFeatured);
 
-    setFeaturedProducts(featuredProds)
+    setFeaturedProducts(featuredProds);
   }
 
-  return(
-    <DestaquesArea>
+  return (
+    <DestaquesArea id="featured">
       <Container moveUp={moveUp}>
         <TitleDes>
           <h2>Alguns Destaques do mês</h2>
-          <p>Confira nos destaques da TechMoos alguma das melhores promoções desse mês</p>
+          <p>
+            Confira nos destaques da TechMoos alguma das melhores promoções
+            desse mês
+          </p>
 
           <button>Ver mais</button>
         </TitleDes>
 
         <Products>
           {featuredProducts.map((featuredProduct) => {
-            return(
+            return (
               <Product key={featuredProduct.id}>
                 <InfoProduct>
                   <div>
@@ -45,18 +54,25 @@ const FeaturedHome = () =>{
                     <p>{featuredProduct.description}</p>
                   </div>
 
-                  <span>R${featuredProduct.price},00 <button onClick={() => addProductsInCar(featuredProduct.id)}>Adicionar</button></span>
+                  <span>
+                    R${featuredProduct.price},00{" "}
+                    <button
+                      onClick={() => addProductsInCar(featuredProduct.id)}
+                    >
+                      Adicionar
+                    </button>
+                  </span>
                 </InfoProduct>
                 <div>
-                  <img src={featuredProduct.urlImg}/>
+                  <img src={featuredProduct.urlImg} />
                 </div>
               </Product>
-            )
+            );
           })}
         </Products>
       </Container>
     </DestaquesArea>
-  )
-}
+  );
+};
 
-export default FeaturedHome
+export default FeaturedHome;

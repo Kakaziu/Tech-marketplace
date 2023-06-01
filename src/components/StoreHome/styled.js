@@ -137,20 +137,3 @@ export const InfoProducts = styled.div`
     }
   }
 `;
-
-export const DirectButton = styled.a`
-  width: 20%;
-  display: block;
-  margin: auto;
-  padding: 10px 0px;
-  text-align: center;
-  font-size: 19px;
-  border-radius: 4px;
-  border: none;
-  color: #baadfc;
-  cursor: pointer;
-
-  &:hover {
-    color: #a195de;
-  }
-`;

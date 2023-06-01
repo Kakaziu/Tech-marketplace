@@ -1,6 +1,5 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
-  DirectButton,
   InfoProducts,
   LineInside,
   LineOutside,
@@ -19,7 +18,13 @@ const StoreHome = () => {
   const [moveUp, setMoveUp] = useState(false);
   const [linePlace, setLinePlace] = useState("0%");
   const [chooseCategory, setChooseCategory] = useState(null);
+  const [initialProducts, setInitialProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    const initial = products.slice(0, 8);
+    setInitialProducts(initial);
+  }, []);
 
   document.addEventListener("scroll", () => {
     if (window.scrollY > 1850) {
@@ -36,7 +41,7 @@ const StoreHome = () => {
   }
 
   return (
-    <Store>
+    <Store id="store">
       <MoveUp moveUp={moveUp}>
         <MenuProducts>
           <ul>
@@ -62,7 +67,7 @@ const StoreHome = () => {
 
         <Products>
           {!chooseCategory
-            ? products.map((product) => {
+            ? initialProducts.map((product) => {
                 return (
                   <Product key={product.id}>
                     <img src={product.urlImg} />
@@ -103,8 +108,6 @@ const StoreHome = () => {
                 );
               })}
         </Products>
-
-        <DirectButton>Ver mais</DirectButton>
       </MoveUp>
     </Store>
   );

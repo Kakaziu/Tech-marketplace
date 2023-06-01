@@ -1,33 +1,33 @@
-import { useContext, useEffect, useState } from 'react'
-import { Container, HeaderTag } from './styled'
-import Cart from '../Cart'
-import { ProductsContext } from '../../context/ProductContext'
-import { toast } from 'react-toastify'
+import { useContext, useEffect, useState } from "react";
+import { Container, HeaderTag } from "./styled";
+import Cart from "../Cart";
+import { ProductsContext } from "../../context/ProductContext";
+import { toast } from "react-toastify";
+import { Link } from "react-scroll";
 
-const Header = () =>{
+const Header = () => {
+  const { totalCar } = useContext(ProductsContext);
+  const [showCart, setShowCart] = useState(false);
+  const [headerColor, setHeaderColor] = useState(false);
 
-  const { totalCar } = useContext(ProductsContext)
-  const [showCart, setShowCart] = useState(false)
-  const [headerColor, setHeaderColor] = useState(false)
-
-  window.addEventListener('scroll', () =>{
-    if(scrollY > 0){
-      setHeaderColor(true)
-    }else{
-      setHeaderColor(false)
+  window.addEventListener("scroll", () => {
+    if (scrollY > 0) {
+      setHeaderColor(true);
+    } else {
+      setHeaderColor(false);
     }
-  })
+  });
 
-  useEffect(() =>{
-    if(totalCar() === 0) setShowCart(false)
-  }, [totalCar()])
+  useEffect(() => {
+    if (totalCar() === 0) setShowCart(false);
+  }, [totalCar()]);
 
-  function onShowCart(){
-    if(totalCar() === 0) return toast.warn('Não tem produtos no carrinho.')
-    setShowCart(!showCart)
+  function onShowCart() {
+    if (totalCar() === 0) return toast.warn("Não tem produtos no carrinho.");
+    setShowCart(!showCart);
   }
 
-  return(
+  return (
     <HeaderTag headerColor={headerColor}>
       <Container>
         <h2>
@@ -36,32 +36,52 @@ const Header = () =>{
             trigger="loop"
             delay="2500"
             colors="primary:#30c9e8"
-            style={{width:'40px',height:'40px'}}>
-          </lord-icon>
+            style={{ width: "40px", height: "40px" }}
+          ></lord-icon>
           <span>TechMoos</span>
         </h2>
 
         <nav>
           <ul>
-            <li>Home</li>
-            <li>Destaques</li>
-            <li>Loja</li>
-            <li>Contato</li>
+            <Link to="home" spy={true} smooth={true} duration={500} offset={0}>
+              <li>Home</li>
+            </Link>
+            <Link
+              to="featured"
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={0}
+            >
+              <li>Destaques</li>
+            </Link>
+            <Link
+              to="categorys"
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={0}
+            >
+              <li>Categorias</li>
+            </Link>
+            <Link to="store" spy={true} smooth={true} duration={500} offset={0}>
+              <li>Loja</li>
+            </Link>
             <li onClick={onShowCart}>
-              { totalCar() > 0 ? <span>{totalCar()}</span> : ''}
+              {totalCar() > 0 ? <span>{totalCar()}</span> : ""}
               <lord-icon
                 src="https://cdn.lordicon.com/wbtzvepm.json"
                 trigger="click"
                 colors="primary:#66d7ee,secondary:#66d7ee"
-                style={{width:'45px', height:'45px', cursor: 'pointer'}}>
-              </lord-icon>
+                style={{ width: "45px", height: "45px", cursor: "pointer" }}
+              ></lord-icon>
             </li>
           </ul>
         </nav>
       </Container>
-      <Cart showCart={showCart}/>
+      <Cart showCart={showCart} />
     </HeaderTag>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
