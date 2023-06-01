@@ -11,6 +11,10 @@ export const HeaderTag = styled.header`
   width: 100%;
   transition: 0.3s;
   padding: 20px;
+
+  @media (max-width: 880px) {
+    background-color: black;
+  }
 `;
 
 export const Container = styled.div`
@@ -34,46 +38,61 @@ export const Container = styled.div`
     }
   }
 
-  ul {
-    list-style: none;
-    font-size: 17px;
-    display: flex;
-    align-items: center;
+  @media (max-width: 470px) {
+    width: 95%;
+  }
+`;
 
-    li {
-      margin-left: 25px;
-      position: relative;
-      transition: 0.3s;
-      cursor: pointer;
+export const List = styled.ul`
+  list-style: none;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
 
-      &:hover {
-        color: #baadfc;
-      }
+  li {
+    margin-left: 25px;
+    position: relative;
+    transition: 0.3s;
+    cursor: pointer;
 
-      span {
-        position: absolute;
-        right: -10px;
-        top: 0;
-        background-color: #baadfc;
-        width: 25px;
-        height: 25px;
-        border-radius: 12.5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: black;
-        z-index: 9999;
-        font-weight: bold;
-      }
+    &:hover {
+      color: #baadfc;
     }
 
-    @media (max-width: 880px) {
-      display: none;
+    span {
+      position: absolute;
+      right: -10px;
+      top: 0;
+      background-color: #baadfc;
+      width: 25px;
+      height: 25px;
+      border-radius: 12.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      z-index: 9999;
+      font-weight: bold;
     }
   }
 
-  @media (max-width: 470px) {
-    width: 95%;
+  @media (max-width: 880px) {
+    /* display: ${(props) => (props.showMobileMenu ? "flex" : "none")}; */
+    height: ${(props) => (props.showMobileMenu ? "300px" : "0px")};
+    transition: 0.3s;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 80px;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    li {
+      margin-top: 25px;
+    }
   }
 `;
 

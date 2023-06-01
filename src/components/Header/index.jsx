@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { Container, HeaderTag, MobileMenu } from "./styled";
+import { Container, HeaderTag, List, MobileMenu } from "./styled";
 import Cart from "../Cart";
 import { ProductsContext } from "../../context/ProductContext";
 import { toast } from "react-toastify";
@@ -10,6 +10,7 @@ const Header = () => {
   const { totalCar } = useContext(ProductsContext);
   const [showCart, setShowCart] = useState(false);
   const [headerColor, setHeaderColor] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   window.addEventListener("scroll", () => {
     if (scrollY > 0) {
@@ -28,6 +29,8 @@ const Header = () => {
     setShowCart(!showCart);
   }
 
+  console.log(showMobileMenu);
+
   return (
     <HeaderTag headerColor={headerColor}>
       <Container>
@@ -43,7 +46,7 @@ const Header = () => {
         </h2>
 
         <nav>
-          <ul>
+          <List showMobileMenu={showMobileMenu}>
             <Link to="home" spy={true} smooth={true} duration={500} offset={0}>
               <li>Home</li>
             </Link>
@@ -77,8 +80,8 @@ const Header = () => {
                 style={{ width: "45px", height: "45px", cursor: "pointer" }}
               ></lord-icon>
             </li>
-          </ul>
-          <MobileMenu>
+          </List>
+          <MobileMenu onClick={() => setShowMobileMenu(!showMobileMenu)}>
             <AiOutlineMenu size="40" />
           </MobileMenu>
         </nav>

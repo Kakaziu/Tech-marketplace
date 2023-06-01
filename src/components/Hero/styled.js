@@ -51,6 +51,12 @@ export const HeroTag = styled.div`
     @media (max-width: 1060px) {
       width: 95%;
     }
+
+    @media (max-width: 450px) {
+      width: 90%;
+      margin: auto;
+      margin-top: 20px;
+    }
   }
 
   .swiper {
@@ -60,6 +66,10 @@ export const HeroTag = styled.div`
     padding: 50px 0px;
     margin-top: 50px;
     border-radius: 10px;
+
+    @media (max-width: 450px) {
+      width: 100%;
+    }
   }
 
   .swiper-slides {
