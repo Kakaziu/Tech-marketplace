@@ -32,11 +32,11 @@ const Hero = () => {
               <p>
                 Bem-vindo ao nosso site de tecnologia de ponta! Aqui você
                 encontra os melhores equipamentos, desde computadores de última
-                geração até celulares e tablets dos mais diversos modelos e
-                marcas. Oferecemos produtos de qualidade a preços justos e nossa
-                equipe está sempre disponível para ajudar a encontrar o
-                equipamento perfeito para você. Navegue pelo nosso site e
-                descubra como a tecnologia pode facilitar a sua vida!
+                geração até celulares e tablets de diversas marcas. Oferecemos
+                produtos de qualidade a preços justos, e nossa equipe está
+                sempre disponível para ajudar a encontrar o equipamento perfeito
+                para você. Descubra como a tecnologia pode facilitar sua vida
+                navegando em nosso site!
               </p>
               <Link to="store" spy={true} smooth={true} offset={0}>
                 Conferir nossa loja
@@ -49,10 +49,14 @@ const Hero = () => {
             <div>
               <h1>TechMoos: Tech para todos.</h1>
               <p>
-                Na TechMoos se encontra grandes ofertas e promoções todos os
-                meses. Não perca a oportunidade de conferir as ofertas e
-                descontos especiais deste mês e encontrar o produto de
-                tecnologia que atenda às suas necessidades.
+                Na TechMoos, você encontrará uma ampla variedade de produtos de
+                alta qualidade e desempenho excepcional, além de grandes ofertas
+                e promoções mensais. Não perca a oportunidade de conferir as
+                ofertas e descontos especiais deste mês, que foram
+                cuidadosamente selecionados para atender às suas necessidades
+                tecnológicas. Nossa loja online oferece conveniência e
+                diversidade, garantindo que você encontre o produto perfeito
+                para você.
               </p>
               <Link to="featured" spy={true} smooth={true} offset={0}>
                 Destaques do mês
@@ -65,12 +69,13 @@ const Hero = () => {
             <div>
               <h1>TechMoos: Tech para todos.</h1>
               <p>
-                TechMoos é um destino único para todos os entusiastas de
-                tecnologia que buscam produtos de alta qualidade e desempenho
-                excepcional. Com uma vasta gama de produtos que incluem
-                computadores, celulares, acessórios e periféricos, a loja online
-                oferece aos seus clientes a conveniência de encontrar tudo o que
-                precisam em um só lugar. Confira as variedades do nosso catálogo
+                TechMoos é o destino perfeito para entusiastas de tecnologia em
+                busca de produtos de alta qualidade e desempenho excepcional.
+                Com uma ampla gama de produtos, incluindo computadores,
+                celulares, acessórios e periféricos, nossa loja online oferece a
+                conveniência de encontrar tudo o que você precisa em um só
+                lugar. Explore as variedades do nosso catálogo e encontre o que
+                procura!
               </p>
               <Link to="categorys" spy={true} smooth={true} offset={0}>
                 Conferir categorias
