@@ -29,8 +29,6 @@ const Header = () => {
     setShowCart(!showCart);
   }
 
-  console.log(showMobileMenu);
-
   return (
     <HeaderTag headerColor={headerColor}>
       <Container>

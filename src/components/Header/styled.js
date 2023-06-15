@@ -92,6 +92,7 @@ export const List = styled.ul`
 
     li {
       margin-top: 25px;
+      margin-left: 0px;
     }
   }
 `;
