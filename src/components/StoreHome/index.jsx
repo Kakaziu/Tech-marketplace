@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import { AiOutlineBranches } from "react-icons/ai";
 import {
   CategorysList,
   FilterButton,
@@ -38,6 +37,7 @@ const StoreHome = () => {
 
     setChooseCategory(category);
     setFilteredProducts(filter);
+    setShowCategorysList(false);
   }
 
   return (
