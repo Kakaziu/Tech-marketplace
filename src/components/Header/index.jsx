@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Container, HeaderTag, List, MobileMenu } from "./styled";
 import Cart from "../Cart";
 import { ProductsContext } from "../../context/ProductContext";
@@ -19,16 +19,16 @@ const Header = () => {
       setHeaderColor(false);
     }
   });
-
   useEffect(() => {
     if (totalCar() === 0) setShowCart(false);
   }, [totalCar()]);
 
   function onShowCart() {
     if (totalCar() === 0) return toast.warn("Não tem produtos no carrinho.");
-    setShowCart(!showCart);
-  }
 
+    setShowCart(!showCart);
+    setShowMobileMenu(false);
+  }
   return (
     <HeaderTag headerColor={headerColor}>
       <Container>
@@ -79,8 +79,18 @@ const Header = () => {
               ></lord-icon>
             </li>
           </List>
-          <MobileMenu onClick={() => setShowMobileMenu(!showMobileMenu)}>
-            <AiOutlineMenu size="40" />
+          <MobileMenu
+            onClick={
+              !showCart
+                ? () => setShowMobileMenu(!showMobileMenu)
+                : () => setShowCart(false)
+            }
+          >
+            {!showCart ? (
+              <AiOutlineMenu size="40" />
+            ) : (
+              <AiOutlineClose size="40" />
+            )}
           </MobileMenu>
         </nav>
       </Container>

@@ -77,7 +77,6 @@ export const List = styled.ul`
   }
 
   @media (max-width: 880px) {
-    /* display: ${(props) => (props.showMobileMenu ? "flex" : "none")}; */
     height: ${(props) => (props.showMobileMenu ? "300px" : "0px")};
     transition: 0.3s;
     overflow: hidden;

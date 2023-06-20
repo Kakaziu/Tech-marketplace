@@ -57,10 +57,13 @@ export const TitleDes = styled.div`
       background-color: rgb(186, 173, 252, 0.7);
     }
 
-    @media (max-width: 500px) {
-      width: 50%;
+    @media (max-width: 1020px) {
       margin: auto;
       margin-top: 30px;
+    }
+
+    @media (max-width: 500px) {
+      width: 50%;
     }
   }
 
