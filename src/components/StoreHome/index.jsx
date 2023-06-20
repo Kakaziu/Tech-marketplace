@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { BsFilterLeft } from "react-icons/bs";
+import { AiOutlineBranches } from "react-icons/ai";
 import {
   CategorysList,
   FilterButton,
@@ -23,7 +23,7 @@ const StoreHome = () => {
   const [showCategorysList, setShowCategorysList] = useState(false);
 
   useEffect(() => {
-    const initial = products.slice(0, 8);
+    const initial = products.slice(0, 12);
     setInitialProducts(initial);
   }, []);
 
@@ -48,7 +48,7 @@ const StoreHome = () => {
             <FilterButton
               onClick={() => setShowCategorysList(!showCategorysList)}
             >
-              Filtrar <BsFilterLeft size="28" />
+              Filtrar
             </FilterButton>
           </div>
           <CategorysList showCategorysList={showCategorysList}>

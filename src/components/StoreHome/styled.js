@@ -21,6 +21,11 @@ export const Products = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 20px;
+
+  @media (max-width: 700px) {
+    justify-content: center;
+  }
 `;
 
 export const FilterButton = styled.button`
@@ -41,11 +46,29 @@ export const MenuProducts = styled.div`
   margin: auto;
   color: white;
   display: flex;
+  position: relative;
 
   div {
     width: 13%;
     display: flex;
     justify-content: left;
+
+    @media (max-width: 1050px) {
+      width: 300px;
+    }
+
+    @media (max-width: 140px) {
+      width: 95%;
+    }
+  }
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 700px) {
+    width: 85%;
   }
 `;
 
@@ -70,6 +93,20 @@ export const CategorysList = styled.ul`
     &:hover {
       color: #a493fa;
     }
+
+    @media (max-width: 1050px) {
+      padding: ${(props) => (props.showCategorysList ? "20px" : "0px")};
+    }
+  }
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    width: 300px;
+    height: ${(props) => (props.showCategorysList ? "250px" : "0%")};
+    opacity: ${(props) => (props.showCategorysList ? "1" : "0")};
+    position: absolute;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+    top: 100%;
   }
 `;
 
@@ -85,6 +122,31 @@ export const Product = styled.div`
     min-width: 230px;
     height: 180px;
     border-radius: 4px;
+
+    @media (max-width: 1115px) {
+      width: 100%;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 1115px) {
+    flex-direction: column;
+    width: 300px;
+    height: 350px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1060px) {
+    width: 45%;
+    height: 380px;
+  }
+
+  @media (max-width: 700px) {
+    width: 90%;
+  }
+
+  @media (max-width: 450px) {
+    width: 95%;
   }
 `;
 
@@ -131,5 +193,9 @@ export const InfoProducts = styled.div`
         transform: scale(1.1);
       }
     }
+  }
+
+  @media (max-width: 1115px) {
+    height: 100%;
   }
 `;
