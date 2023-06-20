@@ -36,8 +36,8 @@ export const FilterButton = styled.button`
   width: 100%;
   font-size: 20px;
   background-color: transparent;
-  border: 2px solid #baadfc;
-  color: #baadfc;
+  border: 2px solid white;
+  color: white;
   cursor: pointer;
 `;
 

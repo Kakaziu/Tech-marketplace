@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { AiOutlineBranches } from "react-icons/ai";
 import {
   CategorysList,
   FilterButton,
@@ -49,6 +50,7 @@ const StoreHome = () => {
               onClick={() => setShowCategorysList(!showCategorysList)}
             >
               Filtrar
+              <AiOutlineBranches size="25" />
             </FilterButton>
           </div>
           <CategorysList showCategorysList={showCategorysList}>
