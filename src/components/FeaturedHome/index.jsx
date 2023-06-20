@@ -9,6 +9,7 @@ import {
 } from "./styled";
 import products from "../../Products";
 import { ProductsContext } from "../../context/ProductContext";
+import { Link } from "react-scroll";
 
 const FeaturedHome = () => {
   const { addProductsInCar } = useContext(ProductsContext);
@@ -41,7 +42,9 @@ const FeaturedHome = () => {
             desse mês
           </p>
 
-          <button>Ver mais</button>
+          <Link to="store" spy={true} smooth={true} duration={500} offset={0}>
+            Ver mais
+          </Link>
         </TitleDes>
 
         <Products>

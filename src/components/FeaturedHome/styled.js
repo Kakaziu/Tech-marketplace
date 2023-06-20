@@ -40,23 +40,27 @@ export const TitleDes = styled.div`
     }
   }
 
-  button {
+  a {
+    display: block;
+    margin-top: 30px;
     padding: 10px 0px;
-    width: 30%;
-    margin-top: 20px;
-    border: none;
-    background-color: #baadfc;
     border-radius: 4px;
+    background-color: #baadfc;
+    color: black;
     font-size: 18px;
-    transition: 0.2s;
     cursor: pointer;
+    text-align: center;
+    width: 40%;
+    transition: 0.3s;
 
     &:hover {
-      background-color: #9484e0;
+      background-color: rgb(186, 173, 252, 0.7);
     }
 
-    @media (max-width: 470px) {
-      width: 90%;
+    @media (max-width: 500px) {
+      width: 50%;
+      margin: auto;
+      margin-top: 30px;
     }
   }
 

@@ -21,7 +21,7 @@ export const TitleFooter = styled.span`
   width: 13%;
   font-weight: bold;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto;
 `;
 
