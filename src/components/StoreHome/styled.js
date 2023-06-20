@@ -23,58 +23,54 @@ export const Products = styled.div`
   justify-content: space-between;
 `;
 
+export const FilterButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 8px 0px;
+  width: 100%;
+  font-size: 20px;
+  background-color: transparent;
+  border: 2px solid #baadfc;
+  color: #baadfc;
+  cursor: pointer;
+`;
+
 export const MenuProducts = styled.div`
-  width: 85%;
+  width: 90%;
   margin: auto;
   color: white;
-
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    width: 80%;
-    margin: auto;
-
-    li {
-      transition: 0.3s;
-      cursor: pointer;
-
-      &:hover {
-        color: #a493fa;
-      }
-    }
-  }
+  display: flex;
 
   div {
-    margin: auto;
-    position: relative;
-    width: 90%;
+    width: 13%;
+    display: flex;
+    justify-content: left;
   }
 `;
 
-export const LineOutside = styled.hr`
-  position: relative;
-  margin: auto;
-  width: 100%;
-  margin-top: 20px;
-  height: 3px;
-  border: none;
-  background-color: white;
-  border-radius: 10px;
-  bottom: 0;
-`;
-
-export const LineInside = styled.hr`
-  position: absolute;
-  z-index: 9997;
+export const CategorysList = styled.ul`
+  list-style: none;
+  justify-content: space-around;
+  font-size: 20px;
+  width: ${(props) => (props.showCategorysList ? "87%" : "0%")};
+  overflow: hidden;
+  display: flex;
   transition: 0.3s;
-  bottom: 0;
-  left: ${(props) => props.linePlace};
-  height: 3px;
-  width: 17%;
-  border: none;
-  background-color: #836bff;
+  align-items: center;
+  background-color: black;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+
+  li {
+    transition: 0.3s;
+    padding: 0px 50px;
+    cursor: pointer;
+
+    &:hover {
+      color: #a493fa;
+    }
+  }
 `;
 
 export const Product = styled.div`

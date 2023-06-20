@@ -165,12 +165,25 @@ export const Product = styled.div`
 
     @media (max-width: 660px) {
       width: 100%;
+      height: 350px;
+    }
+
+    @media (max-width: 500px) {
+      height: 250px;
+    }
+
+    @media (max-width: 400px) {
+      height: 200px;
     }
   }
 
   p {
     margin-top: 10px;
     font-size: 14px;
+  }
+
+  @media (max-width: 1020px) {
+    justify-content: space-between;
   }
 
   @media (max-width: 660px) {
@@ -185,4 +198,8 @@ export const Product = styled.div`
 
 export const InfoProduct = styled.div`
   padding: 20px;
+
+  @media (max-width: 1020px) {
+    width: 100%;
+  }
 `;

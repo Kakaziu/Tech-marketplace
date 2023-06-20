@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
+import { BsFilterLeft } from "react-icons/bs";
 import {
+  CategorysList,
+  FilterButton,
   InfoProducts,
-  LineInside,
-  LineOutside,
   MenuProducts,
   MoveUp,
   Product,
@@ -16,10 +17,10 @@ import { ProductsContext } from "../../context/ProductContext";
 const StoreHome = () => {
   const { addProductsInCar } = useContext(ProductsContext);
   const [moveUp, setMoveUp] = useState(false);
-  const [linePlace, setLinePlace] = useState("0%");
   const [chooseCategory, setChooseCategory] = useState(null);
   const [initialProducts, setInitialProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showCategorysList, setShowCategorysList] = useState(false);
 
   useEffect(() => {
     const initial = products.slice(0, 8);
@@ -32,37 +33,30 @@ const StoreHome = () => {
     }
   });
 
-  function changeCategory(move, category) {
+  function changeCategory(category) {
     const filter = products.filter((product) => product.category === category);
 
     setChooseCategory(category);
     setFilteredProducts(filter);
-    setLinePlace(move);
   }
 
   return (
     <Store id="store">
       <MoveUp moveUp={moveUp}>
         <MenuProducts>
-          <ul>
-            <li onClick={() => changeCategory("0%", null)}>Todos</li>
-            <li onClick={() => changeCategory("20%", "computadores")}>
-              Computadores
-            </li>
-            <li onClick={() => changeCategory("41%", "celulares")}>
-              Celulares
-            </li>
-            <li onClick={() => changeCategory("61%", "notebooks")}>
-              Notebooks
-            </li>
-            <li onClick={() => changeCategory("83%", "periféricos")}>
-              Periféricos
-            </li>
-          </ul>
           <div>
-            <LineOutside id="line-outside" />
-            <LineInside id="line-inside" linePlace={linePlace} />
+            <FilterButton
+              onClick={() => setShowCategorysList(!showCategorysList)}
+            >
+              Filtrar <BsFilterLeft size="28" />
+            </FilterButton>
           </div>
+          <CategorysList showCategorysList={showCategorysList}>
+            <li onClick={() => changeCategory("computadores")}>Computadores</li>
+            <li onClick={() => changeCategory("celulares")}>Celulares</li>
+            <li onClick={() => changeCategory("notebooks")}>Notebooks</li>
+            <li onClick={() => changeCategory("periféricos")}>Periféricos</li>
+          </CategorysList>
         </MenuProducts>
 
         <Products>

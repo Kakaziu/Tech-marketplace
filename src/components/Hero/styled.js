@@ -111,6 +111,10 @@ export const HeroTag = styled.div`
       margin: auto;
       margin-top: 20px;
     }
+
+    @media (max-width: 450px) {
+      width: 90%;
+    }
   }
 
   @media (max-width: 880px) {
